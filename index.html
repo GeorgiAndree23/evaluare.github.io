@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structura rețelei personale</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Năstuța Georgiana Andreea</h1>
+    <p>Email: Nastuta.Ca.Georgiana@student.utcluj.ro</p>
+
+    <div class="section">
+        <h2>Structura rețelei personale și accesul la internet</h2>
+        <img src="network_structure.png" alt="Structura rețelei" style="width:100%; max-width:400px; display: block; margin: auto;">
+    </div>
+
+    <div class="section">
+        <h2>Caracteristicile conexiunii la rețea</h2>
+        <ul>
+            <li>Adresa MAC: 5C-3A-45-31-0F-75</li>
+            <li>Adresa IP: 192.168.1.100</li>
+            <li>Debit la download: 500 Mbps</li>
+            <li>Debit la upload: 100 Mbps</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Specificații tehnice ale stației principale de lucru</h2>
+        <table>
+            <tr>
+                <th>Denumire componentă</th>
+                <th>Producător</th>
+                <th>Parametri</th>
+            </tr>
+            <tr>
+                <td>Procesor</td>
+                <td>Intel</td>
+                <td>Core i5-12400</td>
+            </tr>
+            <tr>
+                <td>Memorie RAM</td>
+                <td>Kingston</td>
+                <td>16GB DDR4</td>
+            </tr>
+            <tr>
+                <td>Placă video</td>
+                <td>NVIDIA</td>
+                <td>GeForce GTX 1660</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section" id="resource-monitoring">
+        <h2>Monitorizare resurse</h2>
+        <div id="slideshow">
+            <img src="slide1.png" alt="Resursă 1">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const slideshow = document.getElementById("slideshow");
+            const images = ["slide1.png", "slide2.png", "slide3.png"];
+            let index = 0;
+
+            function startSlideshow() {
+                setInterval(() => {
+                    index = (index + 1) % images.length;
+                    slideshow.innerHTML = `<img src="${images[index]}" alt="Resursă ${index + 1}">`;
+                }, 3000);
+            }
+
+            document.getElementById("resource-monitoring").addEventListener("dblclick", () => {
+                startSlideshow();
+            });
+        });
+    </script>
+</body>
+</html>
